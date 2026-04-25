@@ -42,6 +42,7 @@ public class AddTrainingActivity extends AppCompatActivity {
 
     private void setButtonListener() {
         Button btnSave = findViewById(R.id.button2);
+        Button btntemp = findViewById(R.id.temp);
         btnSave.setOnClickListener(v -> {
             Intent intent = new Intent(AddTrainingActivity.this, MainActivity.class);
             startActivity(intent);
@@ -51,6 +52,14 @@ public class AddTrainingActivity extends AppCompatActivity {
                 fw.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            }
+        });
+        btntemp.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddTrainingActivity.this, Schedule.class);
+                startActivity(intent);
             }
         });
     }
