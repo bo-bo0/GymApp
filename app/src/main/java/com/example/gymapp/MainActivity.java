@@ -73,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
                     destClass = AddTrainingActivity.class;
                     break;
 
+                case "visualizza scheda":
+                    destClass = Schedule.class;
+                    break;
+
                 default:
                     throw new IllegalArgumentException(destinationPageName + " does not exist.");
             }
