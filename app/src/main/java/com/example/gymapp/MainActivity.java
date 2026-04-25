@@ -15,8 +15,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
     AutoCompleteTextView mainMenu;
     ImageButton mainMenuButton;
@@ -34,8 +32,16 @@ public class MainActivity extends AppCompatActivity {
             populateMainMenu();
             mainMenuSetClickListener();
             setMainMenuButtonOnClickListener();
+            view();
         }
-        private void readDaysList() {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        view();
+    }
+
+    private void readDaysList() {
             String content;
         }
         private void populateMainMenu() {
@@ -85,4 +91,56 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(dest);
         }
+        private void view()
+        {
+            if (FileHelper.hasSaveFileBeenCreated(this))
+            {
+                String content = FileHelper.readFromSaveFile(this).toLowerCase();
+                String[] lines = content.split("\n");
+                for (String day : lines)
+                {
+                    day = day.trim();
+                    switch (day)
+                    {
+                        case "lunedì":
+                        {
+                            findViewById(R.id.vLunedi).setVisibility(VISIBLE);
+                            break;
+                        }
+                        case "martedì":
+                        {
+                            findViewById(R.id.vMartedi).setVisibility(VISIBLE);
+                            break;
+                        }
+                        case "mercoledì":
+                        {
+                            findViewById(R.id.vMercoledi).setVisibility(VISIBLE);
+                            break;
+                        }
+                        case "giovedì":
+                        {
+                            findViewById(R.id.vGiovedi).setVisibility(VISIBLE);
+                            break;
+                        }
+                        case "venerdì":
+                        {
+                            findViewById(R.id.vVenerdi).setVisibility(VISIBLE);
+                            break;
+                        }
+                        case "sabato":
+                        {
+                            findViewById(R.id.vSabato).setVisibility(VISIBLE);
+                            break;
+                        }
+                        case "domenica":
+                        {
+                            findViewById(R.id.vDomenica).setVisibility(VISIBLE);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
