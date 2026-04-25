@@ -9,4 +9,11 @@
         <item>Sabato</item>
         <item>Domenica</item>
     </string-array>
+
+    <string-array name="main_menu_options">
+        <item>Aggiungi allenamento</item>
+        <item>Opzione 2</item>
+        <item>Opzione 3</item>
+    </string-array>
+
 </resources>
