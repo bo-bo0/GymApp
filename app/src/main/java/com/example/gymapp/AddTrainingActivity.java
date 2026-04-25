@@ -2,7 +2,6 @@ package com.example.gymapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -12,15 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
 public class AddTrainingActivity extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,23 +35,25 @@ public class AddTrainingActivity extends AppCompatActivity {
         Button btnSave = findViewById(R.id.button2);
         Button btntemp = findViewById(R.id.temp);
         btnSave.setOnClickListener(v -> {
+
+            String content;
+            String item = getSelectedItemFromSpinner(R.id.list).toString();
+
+            if (FileHelper.hasSaveFileBeenCreated(this)) {
+                content = FileHelper.readFromSaveFile(this) + "\n" + item;
+            }
+            else {
+                content = item;
+            }
+
+            FileHelper.writeToSaveFile(this, content);
+
             Intent intent = new Intent(AddTrainingActivity.this, MainActivity.class);
             startActivity(intent);
-            try {
-                var fw = openFileOutput("save.txt", MODE_PRIVATE);
-                fw.write(getSelectedItemFromSpinner(R.id.list).toString().getBytes());
-                fw.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         });
-        btntemp.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddTrainingActivity.this, Schedule.class);
-                startActivity(intent);
-            }
+        btntemp.setOnClickListener(v -> {
+            Intent intent = new Intent(AddTrainingActivity.this, Schedule.class);
+            startActivity(intent);
         });
     }
 }
