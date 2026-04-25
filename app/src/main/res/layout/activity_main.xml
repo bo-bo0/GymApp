@@ -19,12 +19,12 @@
         app:layout_constraintVertical_bias="0.135" />
 
     <LinearLayout
-        android:layout_width="337dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="220dp"
+        android:layout_width="332dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="188dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintHorizontal_bias="0.886"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -103,6 +103,74 @@
         app:layout_constraintStart_toStartOf="@+id/main_menu"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315">
+
+        <ImageView
+            android:id="@+id/vLunedi"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/vMartedi"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/vMercoledi"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/vGiovedi"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/vVenerdi"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/vSabato"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/vDomenica"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
