@@ -33,7 +33,7 @@ public class AddTrainingActivity extends AppCompatActivity {
 
     private void setButtonListener() {
         Button btnSave = findViewById(R.id.button2);
-        Button btntemp = findViewById(R.id.temp);
+
         btnSave.setOnClickListener(v -> {
 
             String content;
@@ -49,10 +49,6 @@ public class AddTrainingActivity extends AppCompatActivity {
             FileHelper.writeToSaveFile(this, content);
 
             Intent intent = new Intent(AddTrainingActivity.this, MainActivity.class);
-            startActivity(intent);
-        });
-        btntemp.setOnClickListener(v -> {
-            Intent intent = new Intent(AddTrainingActivity.this, Schedule.class);
             startActivity(intent);
         });
     }
