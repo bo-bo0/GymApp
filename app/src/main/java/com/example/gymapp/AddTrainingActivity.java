@@ -39,14 +39,14 @@ public class AddTrainingActivity extends AppCompatActivity {
             String content;
             String item = getSelectedItemFromSpinner(R.id.list).toString();
 
-            if (FileHelper.hasSaveFileBeenCreated(this)) {
-                content = FileHelper.readFromSaveFile(this) + "\n" + item;
+            if (FileHelper.hasSaveFileBeenCreated(this, SaveFile.TRAIN_DAYS)) {
+                content = FileHelper.readFromSaveFile(this, SaveFile.TRAIN_DAYS) + "\n" + item;
             }
             else {
                 content = item;
             }
 
-            FileHelper.writeToSaveFile(this, content);
+            FileHelper.writeToSaveFile(this, content, SaveFile.TRAIN_DAYS);
 
             Intent intent = new Intent(AddTrainingActivity.this, MainActivity.class);
             startActivity(intent);

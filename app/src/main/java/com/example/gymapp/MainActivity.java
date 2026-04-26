@@ -93,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
         }
         private void view()
         {
-            if (FileHelper.hasSaveFileBeenCreated(this))
+            if (FileHelper.hasSaveFileBeenCreated(this, SaveFile.TRAIN_DAYS))
             {
-                String content = FileHelper.readFromSaveFile(this).toLowerCase();
+                String content = FileHelper.readFromSaveFile(this, SaveFile.TRAIN_DAYS).toLowerCase();
                 String[] lines = content.split("\n");
                 for (String day : lines)
                 {
