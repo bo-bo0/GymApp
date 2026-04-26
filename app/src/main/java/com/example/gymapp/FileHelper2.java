@@ -15,7 +15,7 @@ public final class FileHelper2{
     private FileHelper2() {}
     public static String readFromSaveFile(Context context) {
         try {
-            var fis = context.openFileInput("save.kgt");
+            var fis = context.openFileInput("kg.txt");
             var isr = new InputStreamReader(fis);
             var reader = new BufferedReader(isr);
             var sb = new StringBuilder();
@@ -37,7 +37,7 @@ public final class FileHelper2{
 
     public static void writeToSaveFile(Context context, String content) {
         try {
-            var fw = context.openFileOutput("save.kgt", MODE_PRIVATE);
+            var fw = context.openFileOutput("kg.txt", MODE_PRIVATE);
             fw.write(content.getBytes());
             fw.close();
         }
@@ -48,7 +48,7 @@ public final class FileHelper2{
 
     public static boolean hasSaveFileBeenCreated(Context context) {
         try {
-            var fis = context.openFileInput("save.kgt");
+            var fis = context.openFileInput("kg.txt");
             fis.close();
         }
         catch (IOException ex) {
