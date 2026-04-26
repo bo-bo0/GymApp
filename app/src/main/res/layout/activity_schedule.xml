@@ -132,7 +132,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/Save"
             android:layout_width="123dp"
             android:layout_height="70dp"
             android:text="Salva"
