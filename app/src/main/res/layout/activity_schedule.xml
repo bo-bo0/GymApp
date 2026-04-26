@@ -29,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
-            android:id="@+id/boxGiorno1"
+            android:id="@+id/boxDay1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -38,10 +38,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titoloGiorno1">
 
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Spinte 30° 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Pec Deck 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Rowing 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Lat Machine 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Spinte 30° 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg1"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Pec Deck 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg2"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Rowing 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg3"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Lat Machine 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg4"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
         </LinearLayout>
 
         <TextView
@@ -56,7 +72,7 @@
             android:layout_marginStart="8dp"/>
 
         <LinearLayout
-            android:id="@+id/boxGiorno2"
+            android:id="@+id/boxDay2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -66,10 +82,26 @@
             app:layout_constraintTop_toBottomOf="@id/titoloGiorno2"
             android:layout_marginStart="8dp">
 
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Rear Delt 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Deltoid Mach. 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Push Down 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Curl Panca 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Rear Delt 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg9"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Deltoid Mach. 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg10"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Push Down 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg11"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Curl Panca 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg12"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
         </LinearLayout>
 
         <TextView
@@ -80,11 +112,11 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/boxGiorno1"
+            app:layout_constraintTop_toBottomOf="@id/boxDay1"
             app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
-            android:id="@+id/boxGiorno3"
+            android:id="@+id/boxDay3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -93,10 +125,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titoloGiorno3">
 
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Chest Press 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Croci Cavi 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Lat Machine 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Pulley 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Chest Press 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg5"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Croci Cavi 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg6"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Lat Machine 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg7"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Pulley 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg8"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
         </LinearLayout>
 
         <TextView
@@ -107,12 +155,12 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
-            app:layout_constraintTop_toBottomOf="@id/boxGiorno2"
+            app:layout_constraintTop_toBottomOf="@id/boxDay2"
             app:layout_constraintStart_toEndOf="@id/guideline"
             android:layout_marginStart="8dp"/>
 
         <LinearLayout
-            android:id="@+id/boxGiorno4"
+            android:id="@+id/boxDay4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -122,13 +170,37 @@
             app:layout_constraintTop_toBottomOf="@id/titoloGiorno4"
             android:layout_marginStart="8dp">
 
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Lento Avanti 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Deltoid Mach. 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Panca Scott 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="French Press 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Lento Avanti 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
 
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Curl Panca 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
-            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Push Down 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg"><com.google.android.material.textfield.TextInputEditText style="@style/InputKg"/></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg13"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Deltoid Mach. 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg14"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Panca Scott 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg15"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="French Press 2x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg16"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Curl Panca 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg17"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
+            <LinearLayout style="@style/RigaEsercizio"><TextView style="@style/TestoEsercizio" android:text="Push Down 1x6-8" /><com.google.android.material.textfield.TextInputLayout style="@style/BoxKg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kg18"
+                    style="@style/InputKg" /></com.google.android.material.textfield.TextInputLayout></LinearLayout>
         </LinearLayout>
 
         <Button
