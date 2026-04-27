@@ -13,7 +13,7 @@
     <string-array name="main_menu_options">
         <item>Aggiungi allenamento</item>
         <item>Visualizza scheda</item>
-        <item>Opzione 3</item>
+        <item>Note</item>
     </string-array>
     <style name="RigaEsercizio">
         <item name="android:layout_width">match_parent</item>
