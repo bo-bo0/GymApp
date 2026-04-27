@@ -40,107 +40,105 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         view();
     }
+    private void populateMainMenu() {
+        String[] items = getResources().getStringArray(R.array.main_menu_options);
 
-    private void readDaysList() {
-            String content;
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                items
+        );
+
+        mainMenu = findViewById(R.id.mainMenu);
+        mainMenu.setAdapter(adapter);
+
+        mainMenu.setVisibility(INVISIBLE);
+    }
+    private void setMainMenuButtonOnClickListener() {
+        mainMenuButton = findViewById(R.id.mainMenuButton);
+
+        mainMenuButton.setOnClickListener(b -> {
+            mainMenu.showDropDown();
+        });
+    }
+    private void mainMenuSetClickListener() {
+        mainMenu.setOnItemClickListener((parent, view, position, id) -> {
+            String selected = (String) parent.getItemAtPosition(position);
+            changePage(selected);
+        });
+    }
+    private void changePage(String destinationPageName) {
+
+        Class<?> destClass;
+        switch(destinationPageName.toLowerCase()) {
+            case "aggiungi allenamento":
+                destClass = AddTrainingActivity.class;
+                break;
+
+            case "visualizza scheda":
+                destClass = Schedule.class;
+                break;
+
+            case "note":
+                destClass = Notes.class;
+                break;
+
+            default:
+                throw new IllegalArgumentException(destinationPageName + " does not exist.");
         }
-        private void populateMainMenu() {
-            String[] items = getResources().getStringArray(R.array.main_menu_options);
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                    this,
-                    android.R.layout.simple_spinner_dropdown_item,
-                    items
-            );
+        Intent dest = new Intent(MainActivity.this, destClass);
 
-            mainMenu = findViewById(R.id.mainMenu);
-            mainMenu.setAdapter(adapter);
-
-            mainMenu.setVisibility(INVISIBLE);
-        }
-        private void setMainMenuButtonOnClickListener() {
-            mainMenuButton = findViewById(R.id.mainMenuButton);
-
-            mainMenuButton.setOnClickListener(b -> {
-                mainMenu.showDropDown();
-            });
-        }
-        private void mainMenuSetClickListener() {
-            mainMenu.setOnItemClickListener((parent, view, position, id) -> {
-                String selected = (String) parent.getItemAtPosition(position);
-                changePage(selected);
-            });
-        }
-        private void changePage(String destinationPageName) {
-
-            Class<?> destClass;
-            switch(destinationPageName.toLowerCase()) {
-                case "aggiungi allenamento":
-                    destClass = AddTrainingActivity.class;
-                    break;
-
-                case "visualizza scheda":
-                    destClass = Schedule.class;
-                    break;
-
-                default:
-                    throw new IllegalArgumentException(destinationPageName + " does not exist.");
-            }
-
-            Intent dest = new Intent(MainActivity.this, destClass);
-
-            startActivity(dest);
-        }
-        private void view()
+        startActivity(dest);
+    }
+    private void view()
+    {
+        if (FileHelper.hasSaveFileBeenCreated(this, SaveFile.TRAIN_DAYS))
         {
-            if (FileHelper.hasSaveFileBeenCreated(this, SaveFile.TRAIN_DAYS))
+            String content = FileHelper.readFromSaveFile(this, SaveFile.TRAIN_DAYS).toLowerCase();
+            String[] lines = content.split("\n");
+            for (String day : lines)
             {
-                String content = FileHelper.readFromSaveFile(this, SaveFile.TRAIN_DAYS).toLowerCase();
-                String[] lines = content.split("\n");
-                for (String day : lines)
+                day = day.trim();
+                switch (day)
                 {
-                    day = day.trim();
-                    switch (day)
+                    case "lunedì":
                     {
-                        case "lunedì":
-                        {
-                            findViewById(R.id.vLunedi).setVisibility(VISIBLE);
-                            break;
-                        }
-                        case "martedì":
-                        {
-                            findViewById(R.id.vMartedi).setVisibility(VISIBLE);
-                            break;
-                        }
-                        case "mercoledì":
-                        {
-                            findViewById(R.id.vMercoledi).setVisibility(VISIBLE);
-                            break;
-                        }
-                        case "giovedì":
-                        {
-                            findViewById(R.id.vGiovedi).setVisibility(VISIBLE);
-                            break;
-                        }
-                        case "venerdì":
-                        {
-                            findViewById(R.id.vVenerdi).setVisibility(VISIBLE);
-                            break;
-                        }
-                        case "sabato":
-                        {
-                            findViewById(R.id.vSabato).setVisibility(VISIBLE);
-                            break;
-                        }
-                        case "domenica":
-                        {
-                            findViewById(R.id.vDomenica).setVisibility(VISIBLE);
-                            break;
-                        }
+                        findViewById(R.id.vLunedi).setVisibility(VISIBLE);
+                        break;
+                    }
+                    case "martedì":
+                    {
+                        findViewById(R.id.vMartedi).setVisibility(VISIBLE);
+                        break;
+                    }
+                    case "mercoledì":
+                    {
+                        findViewById(R.id.vMercoledi).setVisibility(VISIBLE);
+                        break;
+                    }
+                    case "giovedì":
+                    {
+                        findViewById(R.id.vGiovedi).setVisibility(VISIBLE);
+                        break;
+                    }
+                    case "venerdì":
+                    {
+                        findViewById(R.id.vVenerdi).setVisibility(VISIBLE);
+                        break;
+                    }
+                    case "sabato":
+                    {
+                        findViewById(R.id.vSabato).setVisibility(VISIBLE);
+                        break;
+                    }
+                    case "domenica":
+                    {
+                        findViewById(R.id.vDomenica).setVisibility(VISIBLE);
+                        break;
                     }
                 }
             }
         }
-
-
     }
+}
