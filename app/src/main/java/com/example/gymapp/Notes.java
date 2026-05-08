@@ -12,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Notes extends AppCompatActivity {
-
-    // sus
     private EditText editTitle;
     private EditText editContent;
 
