@@ -19,25 +19,29 @@ public class Notes extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-        ImageButton btnDelete = findViewById(R.id.btn_delete);
         editTitle = findViewById(R.id.edit_note_title);
         editContent = findViewById(R.id.edit_note_content);
 
+        setDeleteListener();
+        setSaveNoteListener();
+    }
+
+    private void setDeleteListener() {
+        ImageButton btnDelete = findViewById(R.id.btn_delete);
 
         btnDelete.setOnClickListener(v -> {
             editTitle.setText("");
             editContent.setText("");
-            saveNote();
         });
     }
-    private void saveNote()
-    {
+
+    private void setSaveNoteListener() {
             FloatingActionButton fabSave = findViewById(R.id.fab_save);
             fabSave.setOnClickListener(v -> {
                 String title = editTitle.getText().toString();
                 String content = editContent.getText().toString();
                 if (!title.isEmpty() && !content.isEmpty()) {
-                    // saveNoteToDatabase(title, content);
+                    FileHelper.saveNoteFile(this, title, content);
                     Toast.makeText(Notes.this, "Nota salvata", Toast.LENGTH_SHORT).show();
                 }
             });
