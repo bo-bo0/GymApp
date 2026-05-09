@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Calendar;
 
 public final class FileHelper{
     private FileHelper() {}
@@ -55,6 +56,27 @@ public final class FileHelper{
             return false;
         }
         return true;
+    }
+
+    public static void saveNoteFile(Context context, String title, String description) {
+        try {
+            var cal = Calendar.getInstance();
+
+            String day = String.valueOf(cal.get(Calendar.YEAR));
+            String month = String.valueOf(cal.get(Calendar.MONTH));
+            String year = String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
+
+            String fileName = day + "-" + month + "-" + year + ".txt";
+            var fw = context.openFileOutput(fileName, MODE_PRIVATE);
+
+            String content = "#TITLE:" + title + " #DESCRIPTION:" + description;
+
+            fw.write(content.getBytes());
+            fw.close();
+        }
+        catch (IOException ex) {
+            throw new RuntimeException();
+        }
     }
 
     private static String getSaveFileName(SaveFile file) {
